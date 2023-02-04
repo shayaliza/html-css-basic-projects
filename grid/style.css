@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.grid_container {
+    box-sizing: border-box;
+    padding: 300px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+
+}
+
+.grid7 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
