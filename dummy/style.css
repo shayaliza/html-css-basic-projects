@@ -1,0 +1,229 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* navigation bar  */
+.nav_bar {
+  position: fixed;
+  top: 0;
+  background-color: black;
+  width: 100%;
+  height: 40px;
+  border: 2px solid gray;
+  box-shadow: 4px 4px 6px gray, -4px -4px 6px gray;
+}
+/* top:0;
+    left: 0;
+    z-index: 1;
+} */
+.right_icon {
+  /*shayalzia*/
+  color: greenyellow;
+  float: left;
+  margin-left: 15px;
+  margin-top: 7px;
+  padding: 2px;
+}
+.left_icon a {
+  text-decoration: none;
+  color: greenyellow;
+  float: right;
+  margin-top: 7px;
+  padding: 2px 15px;
+  margin-right: 10px;
+}
+/* home page  */
+.home_section {
+  width: 70%;
+  margin: auto;
+  height: auto;
+  background-color: aqua;
+}
+.img_cont {
+  margin-top: 90px;
+  width: 46%;
+  float: left;
+  padding: 2px 2px;
+}
+.img_cont img {
+  box-shadow: 4px 4px 6px gray, -4px -4px 6px gray;
+}
+.text_cont {
+  margin-top: 200px;
+  width: 51%;
+  float: right;
+}
+.text_cont h3 {
+  text-align: center;
+  color: whitesmoke;
+  font-size: 32px;
+}
+#para1 {
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 22px;
+  color: antiquewhite;
+}
+#para2 {
+  margin-left: 30px;
+  font-weight: bold;
+  color: antiquewhite;
+  font-size: 22px;
+}
+#para3 {
+  margin-left: 8px;
+  font-size: 18px;
+  color: aliceblue;
+}
+.project_section {
+  color: wheat;
+}
+
+/* skill section  */
+.skill_section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.skill_section {
+  width: 1400px;
+  height: 680px; /*change it later*/
+  display: inline-block;
+}
+.skill_section h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  margin-top: 30px;
+  padding: 0px 6px;
+  color: white;
+}
+.skill_section p {
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+  padding: 5px 6px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.skill_progress_container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 100px;
+}
+
+.skill {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.skill_name {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+}
+.outer {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(225, 225, 225, 0.7);
+}
+.inner {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(225, 225, 225, 0.7),
+    -0.5px -0.5px 0px rgba(225, 225, 225, 1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.num_cont {
+  font-weight: 600;
+  color: white;
+}
+/* circle gradient animation  */
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 188; /*60*/
+  }
+}
+
+@keyframes anim2 {
+  100% {
+    stroke-dashoffset: 259; /*45*/
+  }
+}
+@keyframes anim3 {
+  100% {
+    stroke-dashoffset: 118; /*75*/
+  }
+}
+
+@keyframes anim4 {
+  100% {
+    stroke-dashoffset: 70; /* 85%*/
+  }
+}
+@keyframes anim5 {
+  100% {
+    stroke-dashoffset: 70; /* 85%*/
+  }
+}
+@keyframes anim6 {
+  100% {
+    stroke-dashoffset: 70; /* 85%*/
+  }
+}
+@keyframes anim7 {
+  100% {
+    stroke-dashoffset: 70; /* 85%*/
+  }
+}
+@keyframes anim8 {
+  100% {
+    stroke-dashoffset: 70; /* 85%*/
+  }
+}
+.skill_name {
+  margin-top: 1.7rem;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+}
+.skill_progress_container circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 472; /*complete circle */
+  stroke-dashoffset: 472; /*array will be hiiden  472-472 *0.25 =165 */
+  animation: anim2 2s linear forwards;
+}
+
+.animated-circle {
+  stroke-dashoffset: 472;
+}

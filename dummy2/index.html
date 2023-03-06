@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dummy 2</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .first_block {
+        height: 800px;
+        width: 100%;
+        background-color: yellow;
+      }
+      .skill_name {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        color: white;
+      }
+      svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      #circle1 {
+        fill: none;
+        stroke: url(#GradientColor);
+        stroke-width: 20px;
+        stroke-dasharray: 472; /*complete circle */
+        stroke-dashoffset: 472;
+        /* array will be hiiden  472-472 *0.25 =165 */
+        animation: anim 2s linear forwards;
+      }
+
+      .skill {
+        width: 160px;
+        height: 160px;
+        /* background-color: cornflowerblue; */
+        position: relative;
+      }
+      .outer1 {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        padding: 20px;
+        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+          -6px -6px 10px -1px rgba(225, 225, 225, 0.7);
+      }
+      .inner1 {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+          inset -4px -4px 6px -1px rgba(225, 225, 225, 0.7),
+          -0.5px -0.5px 0px rgba(225, 225, 225, 1),
+          0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+          0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .skill_section {
+        width: 1400px;
+        height: 680px; /*change it later*/
+        display: inline-block;
+      }
+      .skill_section h2 {
+        text-align: center;
+        font-weight: 600;
+        font-size: 32px;
+        margin-top: 30px;
+        padding: 0px 6px;
+        color: white;
+      }
+      .skill_section p {
+        text-align: center;
+        font-weight: 300;
+        font-size: 16px;
+        padding: 5px 6px;
+        padding-bottom: 10px;
+        color: white;
+      }
+
+      .skill_progress_container {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 100px;
+      }
+
+      @keyframes anim {
+        100% {
+          stroke-dashoffset: 188; /*60*/
+        }
+      }
+      #number1 {
+        font-weight: 600;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="first_block"></div>
+    <!-- strt -->
+    <div class="skill_section" id="skill_section">
+      <h2>Skills</h2>
+      <div
+        class="skill_progress_container num_cont"
+        id="skill_progress_container"
+      >
+        <div class="skill">
+          <div class="outer1">
+            <div class="inner1">
+              <div id="number1"></div>
+            </div>
+          </div>
+          <svg width="160px" height="160px">
+            <linearGradient id="GradientColor">
+              <stop offset="0%" stop-color="#141E30" />
+              <stop offset="100%" stop-color="#243B55" />
+            </linearGradient>
+            <circle
+              cx="80"
+              cy="80"
+              r="70"
+              stroke-linecap="round"
+              id="circle1"
+            />
+          </svg>
+          <div class="skill_name"> HTML </div>
+        </div>
+      </div>
+    </div>
+    <!-- end  -->
+    <div class="first_block"></div>
+    <script>
+      function numOne() {
+        let number1 = document.getElementById("number1");
+        let counter = 0;
+        setInterval(() => {
+          if (counter == 60) {
+            clearInterval();
+          } else {
+            counter += 1;
+            number1.innerHTML = counter + "%";
+          }
+        }, 30);
+      }
+
+      const target = document.querySelector(".num_cont");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            numOne();
+          }
+        });
+      });
+      observer.observe(target);
+    </script>
+  </body>
+</html>
